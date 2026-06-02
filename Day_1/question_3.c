@@ -5,7 +5,11 @@ int main() {
 
     printf("Enter a number: ");
     scanf("%d", &n);
-
+    
+    if (n<0){
+        printf("error:factorial of negative no. does not exist");
+        return 1;
+    }
     for (i = 1; i <= n; i++) {
         factorial *= i;
     }
