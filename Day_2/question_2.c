@@ -3,18 +3,26 @@
 #include <stdio.h>
 
 int main() {
-    int reverse=0,digit,num;
-    
-    printf("enter a no.:");
-    scanf("%d",&num);
+    int num, reverse = 0, digit, sign = 1;
 
-    while(num>0){
-        digit=num%10;
-        reverse=reverse*10+digit;
-        num=num/10;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    // Check if number is negative
+    if (num < 0) {
+        sign = -1;
+        num = -num;   // Make it positive
     }
 
-    printf("the reversed no. is:%d",reverse);
+    while (num != 0) {
+        digit = num % 10;
+        reverse = reverse * 10 + digit;
+        num = num / 10;
+    }
+
+    reverse = reverse * sign;   // Restore sign
+
+    printf("The reversed number is: %d\n", reverse);
 
     return 0;
 }
