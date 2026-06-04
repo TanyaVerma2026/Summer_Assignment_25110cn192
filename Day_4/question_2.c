@@ -10,7 +10,5 @@ int main()
   
         printf("The %dth Fibonacci term is %d", n, b);
     
-
     return 0;
-    
 }
