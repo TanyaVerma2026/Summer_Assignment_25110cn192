@@ -1,31 +1,40 @@
-//write a program to Rotate array right. 
+// Write a program to Rotate array right
 
 #include <stdio.h>
 
 int main() {
-    int arr[100], n, i, temp;
+    int arr[100], n, d;
 
-    printf("enter number of elements: ");
+    printf("Enter size of array: ");
     scanf("%d", &n);
 
-    printf("enter array elements:\n");
-    for(i = 0; i < n; i++) {
+    printf("Enter array elements: ");
+    for (int i = 0; i < n; i++) {
         scanf("%d", &arr[i]);
     }
 
-    temp = arr[n - 1];
+    printf("Enter no. of right rotation: ");
+    scanf("%d", &d);
 
-    for(i = n - 1; i > 0; i--) 
-    {
+    d = d % n;              //rotation > array size
 
-        arr[i] = arr[i - 1];
+    int temp[d];
+
+    for (int i = 0; i < d; i++) {                   // store last d then 
+        temp[i] = arr[n - d + i];
     }
 
-    arr[0] = temp;
+    for (int i = n - 1; i >= d; i--) {    // shift element to right
+        arr[i] = arr[i - d];
+    }
+
+    for (int i = 0; i < d; i++) {          // copy 
+        arr[i] = temp[i];
+    }
 
     printf("Array after right rotation:");
-    for(i = 0; i < n; i++) {
-        printf("%d",arr[i]);
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
     }
 
     return 0;
