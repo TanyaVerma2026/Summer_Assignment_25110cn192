@@ -1,0 +1,30 @@
+//Write a program to Check symmetric matrix.
+
+#include <stdio.h>
+
+int main() {
+    int n,i, j,flag = 1;
+   printf("enter the order of matrix: ");
+    scanf("%d", &n);
+
+    int a[n][n];
+  printf("enter the element of matrix:\n");
+    for(i = 0; i < n; i++) {
+        for(j = 0; j < n; j++) {
+            scanf("%d", &a[i][j]);
+        }}
+
+    for(i = 0; i < n; i++) {
+        for(j = 0; j < n; j++) {
+            if(a[i][j] != a[j][i]) {
+                flag = 0;
+                break;
+            }}}
+
+    if(flag)
+        printf("The matrix is Symmetric.\n");
+    else
+        printf("matrix is notot Symmetric.\n");
+
+    return 0;
+}
