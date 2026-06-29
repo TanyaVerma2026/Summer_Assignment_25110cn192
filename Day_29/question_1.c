@@ -1,0 +1,40 @@
+//Wap to Create menu-driven calculator. 
+
+#include <stdio.h>
+
+int main()
+{
+    int choice;
+    float a, b;
+    printf(".. menu driver calculator ..\n");
+    printf("1. Addition\n");
+    printf("2.Subtraction\n");
+    printf("3.Multiplication\n");
+    printf("4. Division\n");
+    printf("enter your choice ");
+    scanf("%d", &choice);
+    printf("enter two n0.: ");
+    scanf("%f %f", &a, &b);
+
+    switch(choice)
+    {
+        case 1:
+            printf("Result = %.2f\n",a + b);
+            break;
+        case 2:
+            printf("Result = %.2f\n", a - b);
+            break;
+        case 3:
+            printf("Result = %.2f\n", a *b);
+            break;
+        case 4:
+            if(b != 0)
+                printf("Result = %.2f\n",a /b);
+            else
+                printf("error! division by zero is not allowed\n");
+            break;
+        default:
+            printf("Invalid choice!\n");}
+
+    return 0;
+}
